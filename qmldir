@@ -1,0 +1,3 @@
+module SortFilterProxyModel
+plugin SortFilterProxyModel
+classname SortFilterProxyModelPlugin

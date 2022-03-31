@@ -1,8 +1,10 @@
 !contains( CONFIG, c\+\+1[147] ): warning("SortFilterProxyModel needs at least c++11, add CONFIG += c++11 to your .pro")
 
 INCLUDEPATH += $$PWD
-
+INCLUDEPATH += $$PWD/filters $$PWD/sorters $$PWD/proxyroles
 HEADERS += $$PWD/qqmlsortfilterproxymodel.h \
+    $$PWD/filters/containsfilter.h \
+    $$PWD/proxyroles/staticRole.h \
     $$PWD/qvariantlessthan.h \
     $$PWD/filters/filter.h \
     $$PWD/filters/filtercontainer.h \
@@ -31,6 +33,8 @@ HEADERS += $$PWD/qqmlsortfilterproxymodel.h \
     $$PWD/proxyroles/filterrole.h
 
 SOURCES += $$PWD/qqmlsortfilterproxymodel.cpp \
+    $$PWD/filters/containsfilter.cpp \
+    $$PWD/proxyroles/StaticRole.cpp \
     $$PWD/qvariantlessthan.cpp \
     $$PWD/filters/filter.cpp \
     $$PWD/filters/filtercontainer.cpp \
