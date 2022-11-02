@@ -3,7 +3,7 @@
 #include <QQmlEngine>
 #include <QQmlContext>
 
-#include "StaticRole.h"
+#include "staticrole.h"
 #include "expressionrole.h"
 #include "filterrole.h"
 #include "joinrole.h"

@@ -1,4 +1,4 @@
-#include "StaticRole.h"
+#include "staticrole.h"
 
 #include <QtQml>
 
