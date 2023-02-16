@@ -86,3 +86,10 @@ target_include_directories(SortFilterProxyModel PRIVATE
     $<TARGET_PROPERTY:Qt6::Qml,INTERFACE_INCLUDE_DIRECTORIES>
     $<TARGET_PROPERTY:Qt6::Core5Compat,INTERFACE_INCLUDE_DIRECTORIES>
     )
+install(TARGETS SortFilterProxyModel
+    EXPORT sortFilterProxyModelTargets
+    LIBRARY DESTINATION "lib"
+    ARCHIVE DESTINATION "lib"
+    RUNTIME DESTINATION "bin"
+    PUBLIC_HEADER DESTINATION "include/SFPM"
+)
