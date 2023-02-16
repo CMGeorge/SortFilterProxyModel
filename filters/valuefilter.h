@@ -3,11 +3,12 @@
 
 #include "rolefilter.h"
 #include <QVariant>
-
+#include <QtQmlIntegration>
 namespace qqsfpm {
 
 class ValueFilter : public RoleFilter {
     Q_OBJECT
+    QML_NAMED_ELEMENT(ValueFilter)
     Q_PROPERTY(QVariant value READ value WRITE setValue NOTIFY valueChanged)
 
 public:

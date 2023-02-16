@@ -3,12 +3,13 @@
 
 #include "proxyrole.h"
 #include <QRegularExpression>
-
+#include <QtQmlIntegration>
 namespace qqsfpm {
 
 class RegExpRole : public ProxyRole
 {
     Q_OBJECT
+    QML_NAMED_ELEMENT(RegExpRole)
     Q_PROPERTY(QString roleName READ roleName WRITE setRoleName NOTIFY roleNameChanged)
     Q_PROPERTY(QString pattern READ pattern WRITE setPattern NOTIFY patternChanged)
     Q_PROPERTY(Qt::CaseSensitivity caseSensitivity READ caseSensitivity WRITE setCaseSensitivity NOTIFY caseSensitivityChanged)

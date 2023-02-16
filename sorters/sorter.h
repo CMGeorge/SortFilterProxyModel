@@ -2,63 +2,66 @@
 #define SORTER_H
 
 #include <QObject>
-
+#include <QtQmlIntegration>
 namespace qqsfpm {
 
 class QQmlSortFilterProxyModel;
 
 class Sorter : public QObject {
-  Q_OBJECT
-  Q_PROPERTY(bool enabled READ enabled WRITE setEnabled NOTIFY enabledChanged)
-  Q_PROPERTY(bool ascendingOrder READ ascendingOrder WRITE setAscendingOrder
-                 NOTIFY sortOrderChanged)
-  Q_PROPERTY(Qt::SortOrder sortOrder READ sortOrder WRITE setSortOrder NOTIFY
-                 sortOrderChanged)
-  Q_PROPERTY(
-      int priority READ priority WRITE setPriority NOTIFY priorityChanged)
+    Q_OBJECT
+    QML_NAMED_ELEMENT(Sorter)
+    QML_UNCREATABLE("Sorter is an abstract class")
+
+    Q_PROPERTY(bool enabled READ enabled WRITE setEnabled NOTIFY enabledChanged)
+    Q_PROPERTY(bool ascendingOrder READ ascendingOrder WRITE setAscendingOrder
+                   NOTIFY sortOrderChanged)
+    Q_PROPERTY(Qt::SortOrder sortOrder READ sortOrder WRITE setSortOrder NOTIFY
+                   sortOrderChanged)
+    Q_PROPERTY(
+        int priority READ priority WRITE setPriority NOTIFY priorityChanged)
 
 public:
-  explicit Sorter(QObject *parent = nullptr);
-  ~Sorter() = default;
+    explicit Sorter(QObject *parent = nullptr);
+    ~Sorter() = default;
 
-  bool enabled() const;
-  void setEnabled(bool enabled);
+    bool enabled() const;
+    void setEnabled(bool enabled);
 
-  bool ascendingOrder() const;
-  void setAscendingOrder(bool ascendingOrder);
+    bool ascendingOrder() const;
+    void setAscendingOrder(bool ascendingOrder);
 
-  Qt::SortOrder sortOrder() const;
-  void setSortOrder(Qt::SortOrder sortOrder);
+    Qt::SortOrder sortOrder() const;
+    void setSortOrder(Qt::SortOrder sortOrder);
 
-  int priority() const;
-  void setPriority(int priority);
+    int priority() const;
+    void setPriority(int priority);
 
-  int compareRows(const QModelIndex &source_left,
-                  const QModelIndex &source_right,
-                  const QQmlSortFilterProxyModel &proxyModel) const;
+    int compareRows(const QModelIndex &source_left,
+                    const QModelIndex &source_right,
+                    const QQmlSortFilterProxyModel &proxyModel) const;
 
-  virtual void proxyModelCompleted(const QQmlSortFilterProxyModel &proxyModel);
+    virtual void proxyModelCompleted(const QQmlSortFilterProxyModel &proxyModel);
 
 Q_SIGNALS:
-  void enabledChanged();
-  void sortOrderChanged();
-  void priorityChanged();
+    void enabledChanged();
+    void sortOrderChanged();
+    void priorityChanged();
 
-  void invalidated();
+    void invalidated();
 
 protected:
-  virtual int compare(const QModelIndex &sourceLeft,
-                      const QModelIndex &sourceRight,
-                      const QQmlSortFilterProxyModel &proxyModel) const;
-  virtual bool lessThan(const QModelIndex &sourceLeft,
+    virtual int compare(const QModelIndex &sourceLeft,
                         const QModelIndex &sourceRight,
                         const QQmlSortFilterProxyModel &proxyModel) const;
-  void invalidate();
+    virtual bool lessThan(const QModelIndex &sourceLeft,
+                          const QModelIndex &sourceRight,
+                          const QQmlSortFilterProxyModel &proxyModel) const;
+    void invalidate();
 
 private:
-  bool m_enabled = true;
-  Qt::SortOrder m_sortOrder = Qt::AscendingOrder;
-  int m_priority = 0;
+    bool m_enabled = true;
+    Qt::SortOrder m_sortOrder = Qt::AscendingOrder;
+    int m_priority = 0;
 };
 
 } // namespace qqsfpm

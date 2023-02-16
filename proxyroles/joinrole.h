@@ -2,12 +2,13 @@
 #define JOINROLE_H
 
 #include "singlerole.h"
-
+#include <qqmlintegration.h>
 namespace qqsfpm {
 
 class JoinRole : public SingleRole
 {
     Q_OBJECT
+    QML_NAMED_ELEMENT(JoinRole)
     Q_PROPERTY(QStringList roleNames READ roleNames WRITE setRoleNames NOTIFY roleNamesChanged)
     Q_PROPERTY(QString separator READ separator WRITE setSeparator NOTIFY separatorChanged)
 

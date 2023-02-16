@@ -4,11 +4,12 @@
 #include "rolefilter.h"
 #include <QVariant>
 #include <QDebug>
-
+#include <QtQmlIntegration>
 namespace qqsfpm {
 
 class ContainsFilter : public RoleFilter {
     Q_OBJECT
+    QML_NAMED_ELEMENT(ContainsFilter)
     Q_PROPERTY(QString value READ value WRITE setValue NOTIFY valueChanged)
     Q_PROPERTY(bool shouldStartWith READ shouldStartWith WRITE setShouldStartWith NOTIFY shouldStartWithChanged)
 

@@ -2,12 +2,12 @@
 #define ANYOFFILTER_H
 
 #include "filtercontainerfilter.h"
-
+#include <QtQmlIntegration>
 namespace qqsfpm {
 
 class AnyOfFilter : public FilterContainerFilter {
     Q_OBJECT
-
+    QML_NAMED_ELEMENT(AnyOf)
 public:
     using FilterContainerFilter::FilterContainerFilter;
 

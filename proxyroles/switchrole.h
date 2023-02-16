@@ -4,12 +4,13 @@
 #include "singlerole.h"
 #include "filters/filtercontainer.h"
 #include <QtQml>
-
+#include <QtQmlIntegration>
 namespace qqsfpm {
 
 class SwitchRoleAttached : public QObject
 {
     Q_OBJECT
+    QML_NAMED_ELEMENT(SwitchRole)
     Q_PROPERTY(QVariant value READ value WRITE setValue NOTIFY valueChanged)
 public:
     explicit SwitchRoleAttached(QObject* parent);

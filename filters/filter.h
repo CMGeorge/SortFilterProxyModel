@@ -2,7 +2,7 @@
 #define FILTER_H
 
 #include <QObject>
-
+#include <QtQmlIntegration>
 namespace qqsfpm {
 
 class QQmlSortFilterProxyModel;
@@ -10,6 +10,8 @@ class QQmlSortFilterProxyModel;
 class Filter : public QObject
 {
     Q_OBJECT
+    QML_NAMED_ELEMENT(Filter)
+    QML_UNCREATABLE("Filter is an abstract class")
     Q_PROPERTY(bool enabled READ enabled WRITE setEnabled NOTIFY enabledChanged)
     Q_PROPERTY(bool inverted READ inverted WRITE setInverted NOTIFY invertedChanged)
 

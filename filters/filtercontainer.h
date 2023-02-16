@@ -39,6 +39,7 @@ private:
 class FilterContainerAttached : public QObject
 {
     Q_OBJECT
+    QML_UNCREATABLE("FilterContainerAttached is an abstract class")
     Q_PROPERTY(QObject* container READ container WRITE setContainer NOTIFY containerChanged)
 
 public:

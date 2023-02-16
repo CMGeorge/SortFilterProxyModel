@@ -2,12 +2,13 @@
 #define ROLEFILTER_H
 
 #include "filter.h"
-
+#include <QtQmlIntegration>
 namespace qqsfpm {
 
 class RoleFilter : public Filter
 {
     Q_OBJECT
+    QML_ELEMENT
     Q_PROPERTY(QString roleName READ roleName WRITE setRoleName NOTIFY roleNameChanged)
 
 public:

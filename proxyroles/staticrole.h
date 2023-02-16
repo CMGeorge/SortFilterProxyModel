@@ -3,8 +3,10 @@
 
 #include "proxyroles/singlerole.h"
 #include <QVariant>
+#include <QtQmlIntegration>
 class StaticRole : public qqsfpm::SingleRole {
     Q_OBJECT
+    QML_ELEMENT
     Q_PROPERTY(QVariant value READ value WRITE setValue NOTIFY valueChanged)
     Q_PROPERTY(bool shouldDecrypt READ shouldDecrypt WRITE setShouldDecrypt
                    NOTIFY shouldDecryptChanged)

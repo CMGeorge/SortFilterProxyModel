@@ -3,7 +3,7 @@
 
 #include "filter.h"
 #include <QQmlScriptString>
-
+#include <QtQmlIntegration>
 class QQmlExpression;
 
 namespace qqsfpm {
@@ -11,6 +11,7 @@ namespace qqsfpm {
 class ExpressionFilter : public Filter
 {
     Q_OBJECT
+    QML_ELEMENT
     Q_PROPERTY(QQmlScriptString expression READ expression WRITE setExpression NOTIFY expressionChanged)
 
 public:

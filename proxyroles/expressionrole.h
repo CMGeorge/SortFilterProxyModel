@@ -3,7 +3,7 @@
 
 #include "singlerole.h"
 #include <QQmlScriptString>
-
+#include <QtQmlIntegration>
 class QQmlExpression;
 
 namespace qqsfpm {
@@ -11,6 +11,7 @@ namespace qqsfpm {
 class ExpressionRole : public SingleRole
 {
     Q_OBJECT
+    QML_NAMED_ELEMENT(ExpressionRole)
     Q_PROPERTY(QQmlScriptString expression READ expression WRITE setExpression NOTIFY expressionChanged)
 
 public:

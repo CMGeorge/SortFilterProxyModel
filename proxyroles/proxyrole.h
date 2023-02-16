@@ -3,7 +3,7 @@
 
 #include <QObject>
 #include <QMutex>
-
+#include <qqmlintegration.h>
 namespace qqsfpm {
 
 class QQmlSortFilterProxyModel;
@@ -11,7 +11,8 @@ class QQmlSortFilterProxyModel;
 class ProxyRole : public QObject
 {
     Q_OBJECT
-
+    QML_NAMED_ELEMENT(ProxyRole)
+    QML_UNCREATABLE("ProxyRole is an abstract class")
 public:
     using QObject::QObject;
     ~ProxyRole() override = default;

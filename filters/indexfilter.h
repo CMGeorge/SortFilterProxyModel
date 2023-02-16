@@ -3,11 +3,12 @@
 
 #include "filter.h"
 #include <QVariant>
-
+#include <QtQmlIntegration>
 namespace qqsfpm {
 
 class IndexFilter: public Filter {
     Q_OBJECT
+    QML_ELEMENT
     Q_PROPERTY(QVariant minimumIndex READ minimumIndex WRITE setMinimumIndex NOTIFY minimumIndexChanged)
     Q_PROPERTY(QVariant maximumIndex READ maximumIndex WRITE setMaximumIndex NOTIFY maximumIndexChanged)
 

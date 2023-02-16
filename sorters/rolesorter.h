@@ -2,12 +2,13 @@
 #define ROLESORTER_H
 
 #include "sorter.h"
-
+#include <QtQmlIntegration>
 namespace qqsfpm {
 
 class RoleSorter : public Sorter
 {
     Q_OBJECT
+    QML_NAMED_ELEMENT(RoleSorter)
     Q_PROPERTY(QString roleName READ roleName WRITE setRoleName NOTIFY roleNameChanged)
 
 public:

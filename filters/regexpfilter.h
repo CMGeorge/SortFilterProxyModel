@@ -3,11 +3,12 @@
 
 #include "rolefilter.h"
 #include <QRegularExpression>
-
+#include <QtQmlIntegration>
 namespace qqsfpm {
 
 class RegExpFilter : public RoleFilter {
   Q_OBJECT
+  QML_NAMED_ELEMENT(RegExpFilter)
   Q_PROPERTY(
       QString pattern READ pattern WRITE setPattern NOTIFY patternChanged)
   Q_PROPERTY(Qt::CaseSensitivity caseSensitivity READ caseSensitivity WRITE

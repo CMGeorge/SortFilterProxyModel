@@ -3,12 +3,13 @@
 
 #include "rolefilter.h"
 #include <QVariant>
-
+#include <QtQmlIntegration>
 namespace qqsfpm {
 
 class RangeFilter : public RoleFilter
 {
     Q_OBJECT
+    QML_ELEMENT
     Q_PROPERTY(QVariant minimumValue READ minimumValue WRITE setMinimumValue NOTIFY minimumValueChanged)
     Q_PROPERTY(bool minimumInclusive READ minimumInclusive WRITE setMinimumInclusive NOTIFY minimumInclusiveChanged)
     Q_PROPERTY(QVariant maximumValue READ maximumValue WRITE setMaximumValue NOTIFY maximumValueChanged)
