@@ -97,12 +97,14 @@ target_include_directories(SortFilterProxyModel PRIVATE
 
 install(TARGETS SortFilterProxyModel
     EXPORT sortFilterProxyModelTargets
-    LIBRARY DESTINATION "qml/SortFilterProxyModel/"
+    LIBRARY DESTINATION "lib"
     ARCHIVE DESTINATION "lib"
     RUNTIME DESTINATION "bin"
     PUBLIC_HEADER DESTINATION "include/SFPM"
 )
 install(FILES ${CMAKE_CURRENT_BINARY_DIR}/SortFilterProxyModel.qmltypes
+        DESTINATION qml/SortFilterProxyModel)
+install(FILES ${CMAKE_CURRENT_BINARY_DIR}/SortFilterProxyModelplugin.qmltypes
         DESTINATION qml/SortFilterProxyModel)
 install(FILES ${CMAKE_CURRENT_BINARY_DIR}/qmldir
         DESTINATION qml/SortFilterProxyModel)
