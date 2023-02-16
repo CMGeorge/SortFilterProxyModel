@@ -2,7 +2,7 @@
 cmake_minimum_required(VERSION 3.22)
 
 project(SortFilterProxyModel VERSION 1.0 LANGUAGES CXX)
-
+#set(${PROJECT_VERSION})
 
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
@@ -71,6 +71,14 @@ qt_add_qml_module(SortFilterProxyModel
 
 
 )
+set_target_properties(SortFilterProxyModel PROPERTIES
+    QT_QML_MODULE_INSTALL_QMLTYPES TRUE
+    QT_QML_MODULE_VERSION ${PROJECT_VERSION}
+    QT_QML_MODULE_URI SortFilterProxyModel
+    QT_QMLTYPES_FILENAME plugins.qmltypes
+    QT_QML_MODULE_INSTALL_DIR "qml"
+)
+
 target_link_libraries(SortFilterProxyModel PRIVATE
     Qt${QT_VERSION_MAJOR}::Core
     Qt${QT_VERSION_MAJOR}::Qml
@@ -86,10 +94,15 @@ target_include_directories(SortFilterProxyModel PRIVATE
     $<TARGET_PROPERTY:Qt6::Qml,INTERFACE_INCLUDE_DIRECTORIES>
     $<TARGET_PROPERTY:Qt6::Core5Compat,INTERFACE_INCLUDE_DIRECTORIES>
     )
+
 install(TARGETS SortFilterProxyModel
     EXPORT sortFilterProxyModelTargets
-    LIBRARY DESTINATION "lib"
+    LIBRARY DESTINATION "qml/SortFilterProxyModel/"
     ARCHIVE DESTINATION "lib"
     RUNTIME DESTINATION "bin"
     PUBLIC_HEADER DESTINATION "include/SFPM"
 )
+install(FILES ${CMAKE_CURRENT_BINARY_DIR}/SortFilterProxyModel.qmltypes
+        DESTINATION qml/SortFilterProxyModel)
+install(FILES ${CMAKE_CURRENT_BINARY_DIR}/qmldir
+        DESTINATION qml/SortFilterProxyModel)
