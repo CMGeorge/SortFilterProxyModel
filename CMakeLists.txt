@@ -111,9 +111,10 @@ if (NOT ANDROID)
             DESTINATION qml/SortFilterProxyModel)
     install(FILES ${CMAKE_CURRENT_BINARY_DIR}/qmldir
                 DESTINATION qml/SortFilterProxyModel)
-else()
     install(FILES ${CMAKE_CURRENT_BINARY_DIR}/qmldir
-                DESTINATION qml/SortFilterProxyModel)
+        DESTINATION qml/SortFilterProxyModel)
+else()
+
 endif()
 
 
