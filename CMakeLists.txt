@@ -103,10 +103,19 @@ install(TARGETS SortFilterProxyModel
     PUBLIC_HEADER DESTINATION "include/SFPM"
 )
 file(GLOB PORXY_PLUGINS_LIBS  ${CMAKE_CURRENT_BINARY_DIR}/libSortFilterProxyModelplugin.*)
-install(FILES ${CMAKE_CURRENT_BINARY_DIR}/SortFilterProxyModel.qmltypes
-        DESTINATION qml/SortFilterProxyModel)
-install(FILES ${PORXY_PLUGINS_LIBS}
-        DESTINATION qml/SortFilterProxyModel)
-install(FILES ${CMAKE_CURRENT_BINARY_DIR}/qmldir
-        DESTINATION qml/SortFilterProxyModel)
+
+if (NOT ANDROID)
+    install(FILES ${PORXY_PLUGINS_LIBS}
+            DESTINATION qml/SortFilterProxyModel)
+    install(FILES ${CMAKE_CURRENT_BINARY_DIR}/SortFilterProxyModel.qmltypes
+            DESTINATION qml/SortFilterProxyModel)
+    install(FILES ${CMAKE_CURRENT_BINARY_DIR}/qmldir
+                DESTINATION qml/SortFilterProxyModel)
+else()
+    install(FILES ${CMAKE_CURRENT_BINARY_DIR}/qmldir
+                DESTINATION qml/SortFilterProxyModel)
+endif()
+
+
+
 
