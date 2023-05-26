@@ -37,10 +37,10 @@ class QQmlSortFilterProxyModel : public QSortFilterProxyModel,
     Q_PROPERTY(bool ascendingSortOrder READ ascendingSortOrder WRITE
                    setAscendingSortOrder NOTIFY ascendingSortOrderChanged)
 
-    Q_PROPERTY(QQmlListProperty<qqsfpm::Filter> filters READ filtersListProperty)
-    Q_PROPERTY(QQmlListProperty<qqsfpm::Sorter> sorters READ sortersListProperty)
+    Q_PROPERTY(QQmlListProperty<qqsfpm::Filter> filters READ filtersListProperty CONSTANT)
+    Q_PROPERTY(QQmlListProperty<qqsfpm::Sorter> sorters READ sortersListProperty CONSTANT)
     Q_PROPERTY(QQmlListProperty<qqsfpm::ProxyRole> proxyRoles READ
-                   proxyRolesListProperty)
+                   proxyRolesListProperty CONSTANT)
 
 public:
     QQmlSortFilterProxyModel(QObject *parent = 0);

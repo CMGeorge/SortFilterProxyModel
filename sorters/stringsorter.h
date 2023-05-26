@@ -3,12 +3,14 @@
 
 #include "rolesorter.h"
 #include <QCollator>
-
+#include <QtQml>
 namespace qqsfpm {
 
 class StringSorter : public RoleSorter
 {
     Q_OBJECT
+    QML_ELEMENT
+
     Q_PROPERTY(Qt::CaseSensitivity caseSensitivity READ caseSensitivity WRITE setCaseSensitivity NOTIFY caseSensitivityChanged)
     Q_PROPERTY(bool ignorePunctation READ ignorePunctation WRITE setIgnorePunctation NOTIFY ignorePunctationChanged)
     Q_PROPERTY(QLocale locale READ locale WRITE setLocale NOTIFY localeChanged)

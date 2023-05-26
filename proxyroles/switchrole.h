@@ -10,7 +10,7 @@ namespace qqsfpm {
 class SwitchRoleAttached : public QObject
 {
     Q_OBJECT
-    QML_NAMED_ELEMENT(SwitchRole)
+//    QML_NAMED_ELEMENT(SwitchRole)
     Q_PROPERTY(QVariant value READ value WRITE setValue NOTIFY valueChanged)
 public:
     explicit SwitchRoleAttached(QObject* parent);
@@ -29,6 +29,9 @@ class SwitchRole : public SingleRole, public FilterContainer
 {
     Q_OBJECT
     Q_INTERFACES(qqsfpm::FilterContainer)
+
+    QML_NAMED_ELEMENT(SwitchRole)
+
     Q_PROPERTY(QString defaultRoleName READ defaultRoleName WRITE setDefaultRoleName NOTIFY defaultRoleNameChanged)
     Q_PROPERTY(QVariant defaultValue READ defaultValue WRITE setDefaultValue NOTIFY defaultValueChanged)
     Q_PROPERTY(QQmlListProperty<qqsfpm::Filter> filters READ filtersListProperty)
