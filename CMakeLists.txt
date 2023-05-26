@@ -56,7 +56,7 @@ qt_add_qml_module(SortFilterProxyModel
         sorters/rolesorter.cpp
         sorters/stringsorter.cpp
         sorters/expressionsorter.cpp
-        sorters/sortersqmltypes.cpp
+#        sorters/sortersqmltypes.cpp
         proxyroles/proxyrole.cpp
         proxyroles/proxyrolecontainer.cpp
         proxyroles/joinrole.cpp

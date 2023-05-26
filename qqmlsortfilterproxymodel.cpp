@@ -546,6 +546,6 @@ void registerQQmlSortFilterProxyModelTypes() {
                                             "SortFilterProxyModel");
 }
 
-Q_COREAPP_STARTUP_FUNCTION(registerQQmlSortFilterProxyModelTypes)
+//Q_COREAPP_STARTUP_FUNCTION(registerQQmlSortFilterProxyModelTypes)
 
 } // namespace qqsfpm

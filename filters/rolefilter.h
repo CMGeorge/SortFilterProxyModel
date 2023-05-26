@@ -8,12 +8,11 @@ namespace qqsfpm {
 class RoleFilter : public Filter
 {
     Q_OBJECT
-    QML_ELEMENT
+//    QML_ELEMENT
     Q_PROPERTY(QString roleName READ roleName WRITE setRoleName NOTIFY roleNameChanged)
 
 public:
     using Filter::Filter;
-
     const QString& roleName() const;
     void setRoleName(const QString& roleName);
 
