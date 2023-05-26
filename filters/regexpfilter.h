@@ -16,7 +16,7 @@ class RegExpFilter : public RoleFilter {
 
 public:
   using RoleFilter::RoleFilter;
-
+    inline explicit RegExpFilter(QObject *parent=Q_NULLPTR):RoleFilter(parent){};
   QString pattern() const;
   void setPattern(const QString &pattern);
 
