@@ -12,7 +12,7 @@ find_package(Qt6 REQUIRED
     Qml
     Core5Compat
     )
-
+qt_policy(SET QTP0001 NEW)
 set(CMAKE_AUTOMOC ON)
 #set(CMAKE_INCLUDE_CURRENT_DIR ON) # This is to find generated *.moc and *.h files in build dir
 
