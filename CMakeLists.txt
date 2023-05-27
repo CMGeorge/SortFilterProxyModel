@@ -69,6 +69,7 @@ qt_add_qml_module(SortFilterProxyModel
         sorters/filtersorter.cpp
         proxyroles/filterrole.cpp
 
+	OUTPUT_DIRECTORY SortFilterProxyModel
 
 )
 set_target_properties(SortFilterProxyModel PROPERTIES
